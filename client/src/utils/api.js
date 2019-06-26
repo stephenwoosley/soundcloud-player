@@ -1,8 +1,17 @@
 import axios from "axios";
-const SoundCloudAudio = require('soundcloud-audio');
-const player = new SoundCloudAudio('95f22ed54a5c297b1c41f72d713623ef');
+// import SC from "soundcloud";
+// const SoundCloudAudio = require('soundcloud-audio');
+// const player = new SoundCloudAudio('95f22ed54a5c297b1c41f72d713623ef');
 
 export default {
+  get: function(resource) {
+    axios.get('https://api.soundcloud.com/oembed&url='+ resource)
+    .then(function (response) {
+      // handle success
+      console.log(response);
+    })
+  }
+  
   // Gets all books
   
   // // Gets the book with the given id
